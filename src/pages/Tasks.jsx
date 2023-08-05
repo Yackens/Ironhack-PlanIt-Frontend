@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../Components/NavBar'
 import { Link } from "react-router-dom";
+import OneTask from "../Components/OneTask"
 
 function Tasks() {
   return (
@@ -18,7 +19,7 @@ function Tasks() {
         <h3>Tasks</h3>
 
         <div>
-            <p>TASK COMPONENT</p>
+            <OneTask />
         </div>
     </div>
   )

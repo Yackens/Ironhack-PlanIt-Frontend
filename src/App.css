@@ -44,3 +44,10 @@
 ul{
   list-style: none;
 }
+
+.statusDiv {
+  width: 24px;
+  height: 24px;
+  background-color: red;
+  border-radius: 40px;
+}
