@@ -6,6 +6,7 @@ import NewCategory from './pages/NewCategory'
 import Tasks from './pages/Tasks'
 import NewTask from './pages/NewTask'
 import SignUp from './pages/SignUp'
+import Home from './pages/Home';
 
 
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<h1>Home page</h1>} />
+        <Route path='/' element={<Home />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/category/new' element={<NewCategory />} />
         <Route path='/tasks' element={<Tasks />} />
