@@ -15,10 +15,12 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        
         <Route path='/categories' element={<Categories />} />
         <Route path='/category/new' element={<NewCategory />} />
         <Route path='/tasks' element={<Tasks />} />
         <Route path='/task/new' element={<NewTask />} />
+      
         <Route path='/signup' element={<SignUp />} />
 
         <Route path='*' element={<h1>404 page</h1>} />
