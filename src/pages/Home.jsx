@@ -16,14 +16,14 @@ function Home() {
 
     <form>
     <label>
-      Username:
+      Username
       <input/>
     </label>
     </form>
 
     <form>
     <label>
-      Password:
+      Password
       <input/>
     </label>
     </form>

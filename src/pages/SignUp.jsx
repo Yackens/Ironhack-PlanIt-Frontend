@@ -11,6 +11,29 @@ function SignUp() {
          </div>
 
         <h2>SignUp</h2>
+
+        <form>
+    <label>
+      E-Mail
+      <input/>
+    </label>
+    </form>
+
+        <form>
+    <label>
+      Username
+      <input/>
+    </label>
+    </form>
+
+    <form>
+    <label>
+      Password
+      <input/>
+    </label>
+    </form>
+
+    <button>SignUp</button>
         
     </div>
   )
