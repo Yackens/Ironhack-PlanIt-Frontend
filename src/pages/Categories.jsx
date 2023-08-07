@@ -41,7 +41,7 @@ const Categories = () => {
           {categories.map(category => (
             <div key={category._id}>
               <Link to={`/category/${category._id}`}>{category.name}</Link>
-              <Link className="editLink" to={`/delete/${category._id}`}>Edit</Link>
+              <Link className="editLink" to={`/delete/${category._id}`}></Link>
               <Link className="deleteLink" to={`/delete/${category._id}`}>Delete</Link>
             </div>
           ))}
