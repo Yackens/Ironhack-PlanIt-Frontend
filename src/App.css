@@ -51,3 +51,10 @@ ul{
   background-color: red;
   border-radius: 40px;
 }
+
+.edit-Icon {
+  width: 24px;
+  height: 24px;
+  background-color: blue;
+  border-radius: 40px;
+}
