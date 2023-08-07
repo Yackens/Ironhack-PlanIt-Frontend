@@ -44,8 +44,8 @@ function Home() {
             </Link>
          </div>
     
-
-    <h1>Just plan it!</h1>
+// needs to be added
+    <h1>Hey USER Just plan it!</h1>
 
     <form onSubmit={handleLogin}>
     <label>

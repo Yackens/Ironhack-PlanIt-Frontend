@@ -19,6 +19,8 @@ function Tasks() {
       </div>
 
       <NavBar />
+
+      {/*Needs to be done */}
       <h2>CATEGORY NAME</h2>
 
       <button onClick={handleCreateNewTask}>Create New Task</button>
