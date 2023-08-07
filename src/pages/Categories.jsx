@@ -1,53 +1,86 @@
-import React, { useState, useEffect } from 'react'; // Import React and hooks only once
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/NavBar';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 const Categories = () => {
-      const [categories, setCategories] = useState([]);
-    
-      const fetchCategories = async () => {
-        try {
-          const response = await axios.get('http://localhost:5005/api/students/');
-          if (response.status === 200) {
-            setCategories(response.data);
-          }
-        } catch (error) {
-          console.error(error);
-        }
+  const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get('http://localhost:5005/api/categories/');
+      if (response.status === 200) {
+        setCategories(response.data);
       }
-    
-      useEffect(() => {
-        fetchCategories();
-      }, []);
-    
-      return (
-        <div>
-          <div id="logo">
-            <Link to='/'>
-              <p>PlanIt</p>
-            </Link>
-          </div>
-    
-          <NavBar />
-    
-          <h2>Categories</h2>
-    
-          <button>Create Category</button>
-    
-          <input type="text" placeholder="Search.." />
-    
-          {categories.map(category => (
-            <div key={category._id}>
-              <Link to={`/category/${category._id}`}>{category.name}</Link>
-              <Link className="editLink" to={`/delete/${category._id}`}></Link>
-              <Link className="deleteLink" to={`/delete/${category._id}`}>Delete</Link>
-            </div>
-          ))}
-        </div>
-      );
+    } catch (error) {
+      console.error(error);
     }
-    
-    export default Categories;
-    
+  }
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const handleEdit = async (categoryId) => {
+    try {
+      // For editing
+      const updatedData = { /* updated data */ };
+      const editResponse = await axios.put(`http://localhost:5005/api/categories/${categoryId}`, updatedData);
+      // Fetch categories again after editing
+      fetchCategories();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDelete = async (categoryId) => {
+    try {
+      // For deleting
+      const deleteResponse = await axios.delete(`http://localhost:5005/api/categories/${categoryId}`);
+      if (deleteResponse.status === 204) {
+        fetchCategories();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <div>
+      <div id="logo">
+        <Link to='/'>
+          <p>PlanIt</p>
+        </Link>
+      </div>
+
+      <NavBar />
+
+      <h2>Categories</h2>
+
+      <button>Create Category</button>
+
+      <input type="text" placeholder="Search.." />
+
+      {categories.map(category => (
+        <div key={category._id}>
+          <Link to={`/category/${category._id}`}>{category.name}</Link>
+          <span
+            className="editLink"
+            onClick={() => handleEdit(category._id)}
+          >
+            Edit
+          </span>
+          <span
+            className="deleteLink"
+            onClick={() => handleDelete(category._id)}
+          >
+            Delete
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Categories;

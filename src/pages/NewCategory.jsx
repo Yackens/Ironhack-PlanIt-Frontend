@@ -11,7 +11,7 @@ function NewCategory() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5005/api/categories', {
+      const response = await axios.post('http://localhost:5005/api/categories/new', {
         name: categoryName
       });
 

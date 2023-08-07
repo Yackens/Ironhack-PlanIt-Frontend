@@ -21,8 +21,8 @@ function App() {
           <Route path='/categories' element={ <Categories />} />
   
           <Route path='/category/new' element={ <NewCategory /> } />
-          <Route path='/tasks' element={<IsPrivate><Tasks /></IsPrivate>} />
-          <Route path='/task/new' element={<IsPrivate><NewTask /></IsPrivate>} />
+          <Route path='/tasks' element={<Tasks />} />
+          <Route path='/task/new' element={<NewTask />} />
         
     
         <Route path='/signup' element={<SignUp />} />
