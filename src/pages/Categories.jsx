@@ -2,7 +2,26 @@ import React from 'react'
 import NavBar from '../Components/NavBar'
 import { Link } from "react-router-dom";
 
-function Categories() {
+const Categories = () => {
+      const [categories, setCategories] = useState([])
+
+      const fetchStudents = async () => {
+        try {
+          const response = await fetch('http://localhost:5005/api/students/')
+          if (response.status === 200) {
+            const parsedCategories = await response.json()
+            setCategories(parsedCategories)
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    
+      useEffect(() => {
+        fetchStudents()
+      }, [])
+
+
   return (
 
    <div>
