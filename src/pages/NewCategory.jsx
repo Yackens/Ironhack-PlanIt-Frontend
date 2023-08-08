@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { API_URL } from '../config/config.index';
+import { API_URL } from '../config/vite.config';
 
 function NewCategory() {
   const navigate = useNavigate();

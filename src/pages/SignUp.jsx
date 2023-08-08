@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { API_URL } from "../config/config.index";
+import { API_URL } from "../config/vite.config";
 
 function Signup() {
   const [email, setEmail] = useState("");

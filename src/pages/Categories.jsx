@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
-import { API_URL } from '../config/config.index';
+import { API_URL } from '../config/vite.config';
 
 const Categories = () => {
   const navigate = useNavigate();

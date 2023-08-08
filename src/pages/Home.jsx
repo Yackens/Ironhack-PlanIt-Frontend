@@ -6,7 +6,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './context/Auth.context';
-import { API_URL } from '../config/config.index';
+import { API_URL } from '../config/vite.config';
 
 
 function Home() {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css';
-import { API_URL } from '../config/config.index';
+import { API_URL } from '../config/vite.config';
 
 
 
