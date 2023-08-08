@@ -27,7 +27,7 @@ function OneTask({ task }) {
   const handleDelete = async () => {
     try {
       // API-Anfrage zum Löschen des Tasks aus der MongoDB
-      await axios.delete(`http://localhost:5005/api/tasks/${task._id}`);
+      await axios.delete(`${API_URL}/api/tasks/${task._id}`);
       // Hier könntest du eine Aktualisierung der Task-Liste auslösen
     } catch (error) {
       console.error(error);

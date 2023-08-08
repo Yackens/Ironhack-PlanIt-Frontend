@@ -60,9 +60,7 @@ function Home() {
             }}
           />
     </label>
-    </form>
 
-    <form>
     <label>
           Password:
           <input
@@ -74,9 +72,10 @@ function Home() {
             }}
           />
         </label>
-    </form>
 
     <button type="submit">LogIn</button>
+    </form>
+
     <Link to="/signup">
         <button>SignUp</button>
       </Link>

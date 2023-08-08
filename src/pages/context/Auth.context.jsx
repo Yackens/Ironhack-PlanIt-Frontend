@@ -1,8 +1,7 @@
 //Auth.context
-
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_URL } from '../config/vite.config';
 
 const AuthContext = createContext();
 
@@ -17,7 +16,7 @@ const AuthContextWrapper = ({ children }) => {
     if (tokenInStorage) {
       try {
         //we make a call to the server and check if the token is valid
-        const { data } = await axios.get("http://localhost:5005/auth/verify", {
+        const { data } = await axios.get(`${API_URL}/auth/verify`, {
           headers: { authorization: `Bearer ${tokenInStorage}` },
         });
         console.log("from the context, here is the verify response", data);
