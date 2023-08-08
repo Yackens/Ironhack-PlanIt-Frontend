@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css';
+import { API_URL } from '../config/config.index';
 
 
 
@@ -17,7 +18,7 @@ function OneTask({ task }) {
     
     try {
       // API-Anfrage zum Aktualisieren des Task-Status in der MongoDB
-      await axios.put(`http://localhost:5005/api/tasks/${task._id}`, { status: newStatus });
+      await axios.put(`${API_URL}/api/tasks/${task._id}`, { status: newStatus });
     } catch (error) {
       console.error(error);
     }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/config.index';
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Categories = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/categories/');
+      const response = await axios.get(`${API_URL}/api/categories/`);
       if (response.status === 200) {
         setCategories(response.data);
       }
@@ -26,7 +27,7 @@ const Categories = () => {
     try {
       // For editing
       const updatedData = { /* updated data */ };
-      const editResponse = await axios.put(`http://localhost:5005/api/categories/${categoryId}`, updatedData);
+      const editResponse = await axios.put(`${API_URL}/api/categories/${categoryId}`, updatedData);
       // Fetch categories again after editing
       fetchCategories();
     } catch (error) {
@@ -37,7 +38,7 @@ const Categories = () => {
   const handleDelete = async (categoryId) => {
     try {
       // For deleting
-      const deleteResponse = await axios.delete(`http://localhost:5005/api/categories/${categoryId}`);
+      const deleteResponse = await axios.delete(`${API_URL}/api/categories/${categoryId}`);
       if (deleteResponse.status === 204) {
         fetchCategories();
       }
