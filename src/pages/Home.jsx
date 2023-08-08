@@ -56,7 +56,7 @@ function Home() {
             value={username}
             required
             onChange={(event) => {
-              setEmail(event.target.value);
+              setUsername(event.target.value);
             }}
           />
     </label>
