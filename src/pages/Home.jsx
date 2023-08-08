@@ -1,3 +1,13 @@
+//Home.jsx
+
+import React from 'react'
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from './context/Auth.context';
+import { API_URL } from '../config/vite.config';
+
 function Home() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
