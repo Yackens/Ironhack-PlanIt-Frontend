@@ -13,22 +13,15 @@ import { AuthContextWrapper } from './pages/context/Auth.context';
 function App() {
   return (
     <AuthContextWrapper>
-      <Routes>
-        <Route path='/' element={<Home />} />
-
-        
-        
-          <Route path='/categories' element={ <Categories />} />
-  
-          <Route path='/category/new' element={ <NewCategory /> } />
-          <Route path='/tasks' element={<Tasks />} />
-          <Route path='/task/new' element={<NewTask />} />
-        
-    
-        <Route path='/signup' element={<SignUp />} />
-
-        <Route path='*' element={<h1>404 page</h1>} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/categories' element={ <IsPrivate><Categories /></IsPrivate>} />
+      <Route path='/category/new' element={ <IsPrivate><NewCategory /></IsPrivate> } />
+      <Route path='/tasks' element={<IsPrivate><Tasks /></IsPrivate>} />
+      <Route path='/task/new' element={<IsPrivate><NewTask /></IsPrivate>} />
+      <Route path='/signup' element={<SignUp />} />
+      <Route path='*' element={<h1>404 page</h1>} />
+    </Routes>
     </AuthContextWrapper>
   );
 }
