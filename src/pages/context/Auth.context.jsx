@@ -1,7 +1,7 @@
 //Auth.context
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-import { API_URL } from '../config/vite.config';
+import { API_URL } from '../../config/vite.config';
 
 const AuthContext = createContext();
 
