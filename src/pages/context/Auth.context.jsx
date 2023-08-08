@@ -1,5 +1,9 @@
+//Auth.context
+
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+
+
 const AuthContext = createContext();
 
 const AuthContextWrapper = ({ children }) => {
