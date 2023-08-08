@@ -17,7 +17,7 @@ function Signup() {
         username,
       });
       console.log("here is the signup response", res);
-      nav("/login");
+      nav("/");
     } catch (err) {
       console.log(err);
     }
