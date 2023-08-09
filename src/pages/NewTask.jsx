@@ -8,7 +8,7 @@ function NewTask() {
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [dueDate, setDueDate] = useState(Date.now());
+  const [dueDate, setDueDate] = useState(new Date().toISOString().slice(0, 10));
   
   const handleCreateTask = async (e) => {
     // Handle creating the task and submitting to MongoDB
@@ -16,7 +16,9 @@ function NewTask() {
 
     try {
       const response = await axios.post(`${API_URL}/api/tasks/new`, {
-        name: categoryName
+        title: title,
+        description: description,
+        dueDate: dueDate
       });
 
       if (response.status === 201) {
