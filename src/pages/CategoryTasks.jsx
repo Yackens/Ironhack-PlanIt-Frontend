@@ -1,10 +1,13 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import OneTask from "../Components/OneTask";
 
 function CategoryTasks() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const categoryName = location.state?.categoryName;
+
 
   const handleCreateNewTask = () => {
     navigate('/task/new');
@@ -21,7 +24,7 @@ function CategoryTasks() {
       <NavBar />
 
       {/*Needs to be done */}
-      <h2>CATEGORY NAME</h2>
+      <h2>{categoryName}</h2>
 
       <button onClick={handleCreateNewTask}>Create New Task</button>
       <h3>Tasks</h3>

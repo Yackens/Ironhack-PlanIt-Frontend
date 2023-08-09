@@ -28,8 +28,10 @@ const Categories = () => {
       // For editing
       const updatedData = { /* updated data */ };
       const editResponse = await axios.put(`${API_URL}/api/categories/${categoryId}`, updatedData);
-      // Fetch categories again after editing
-      fetchCategories();
+      if (editResponse.status === 200) {
+        fetchCategories(); // Fetch categories again after editing
+      }
+  
     } catch (error) {
       console.error(error);
     }
@@ -65,7 +67,9 @@ const Categories = () => {
 
       {categories.map(category => (
         <div key={category._id}>
-          <Link to={`/categories/${category._id}`}>{category.name}</Link>
+          <Link to={`/categories/${category._id}`} state={{ categoryName: category.name }}>
+            {category.name}
+          </Link>
           <span
             className="editLink"
             onClick={() => handleEdit(category._id)}
