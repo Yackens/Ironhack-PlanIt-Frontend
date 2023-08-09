@@ -60,6 +60,14 @@ function NewTask() {
           />
         </label>
         <label>
+          Category:
+          <input
+            type="date"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+          />
+        </label>
+        <label>
           Due Date:
           <input
             type="date"

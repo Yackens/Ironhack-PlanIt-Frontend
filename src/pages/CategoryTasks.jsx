@@ -3,7 +3,7 @@ import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from "react-router-dom";
 import OneTask from "../Components/OneTask";
 
-function Tasks() {
+function CategoryTasks() {
   const navigate = useNavigate();
 
   const handleCreateNewTask = () => {
@@ -33,4 +33,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default CategoryTasks;

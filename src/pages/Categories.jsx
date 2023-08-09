@@ -65,7 +65,7 @@ const Categories = () => {
 
       {categories.map(category => (
         <div key={category._id}>
-          <Link to={`/category/${category._id}`}>{category.name}</Link>
+          <Link to={`/categories/${category._id}`}>{category.name}</Link>
           <span
             className="editLink"
             onClick={() => handleEdit(category._id)}

@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "../pages/Home";
 import Categories from "../pages/Categories"
-import Tasks from "../pages/Tasks"
+import Tasks from "../pages/CategoryTasks"
 import { Link } from "react-router-dom";
 
 
