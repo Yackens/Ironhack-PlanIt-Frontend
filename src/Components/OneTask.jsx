@@ -3,21 +3,20 @@ import axios from 'axios';
 import '../App.css';
 import { API_URL } from '../config/vite.config';
 
-
-
 function OneTask({ task }) {
   if (!task) {
-    return <div>Loading task data...</div>;
+    return <div>No task found.</div>;
   }
 
+  // Initialize status state with the task's status
   const [status, setStatus] = useState(task.status);
 
-  const handleStatusChange = async event => {
+  const handleStatusChange = async (event) => {
     const newStatus = event.target.value;
     setStatus(newStatus);
-    
+
     try {
-      // API-Anfrage zum Aktualisieren des Task-Status in der MongoDB
+      // Update the task's status using the API
       await axios.put(`${API_URL}/api/tasks/${task._id}`, { status: newStatus });
     } catch (error) {
       console.error(error);
@@ -26,21 +25,19 @@ function OneTask({ task }) {
 
   const handleDelete = async () => {
     try {
-      // API-Anfrage zum Löschen des Tasks aus der MongoDB
+      // Delete the task using the API
       await axios.delete(`${API_URL}/api/tasks/${task._id}`);
-      // Hier könntest du eine Aktualisierung der Task-Liste auslösen
+      // You could trigger a refresh of the task list here if needed
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div>
+    <div className="task">
       <div>
-    
-        <h3>{categoy.name}</h3>
-        <div className='statusDiv'>{status}</div>
-        
+        <h3>{task.category.name}</h3>
+        <div className="statusDiv">{status}</div>
         <p>{task.dueDate}</p>
       </div>
       <div>
@@ -53,8 +50,9 @@ function OneTask({ task }) {
           <option value="In Progress">In Progress</option>
           <option value="Completed">Completed</option>
         </select>
+        <button onClick={handleStatusChange}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
-        {/* Hier könntest du einen Link oder Button für die Bearbeitung hinzufügen */}
+        {/* You could add a button or link for editing here */}
       </div>
     </div>
   );
