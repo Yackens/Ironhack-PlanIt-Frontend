@@ -3,11 +3,28 @@ import { Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar';
 
 function NewTask() {
-  const [taskName, setTaskName] = useState('');
+  const navigate = useNavigate();
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [dueDate, setDueDate] = useState(Date.now());
   
-  const handleCreateTask = () => {
+  const handleCreateTask = async (e) => {
     // Handle creating the task and submitting to MongoDB
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(`${API_URL}/api/tasks/new`, {
+        name: categoryName
+      });
+
+      if (response.status === 201) {
+        // Redirect to the task page for the new category
+        const newTaskId = response.data._id;
+        navigate(`/tasks/${newTaskId}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   
     console.log('Create Task clicked');
     console.log('Task Name:', taskName);
@@ -29,25 +46,30 @@ function NewTask() {
 
       <form>
         <label>
-          Task name
+          Task Title:
           <input
-            value={taskName}
-            onChange={(e) => setTaskName(e.target.value)}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </label>
-      </form>
-
-      <form>
         <label>
-          Description
+          Description:
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
+        <label>
+          Due Date:
+          <input
+            type="date"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+          />
+        </label>
+        <button onClick={handleCreateTask}>Create Task</button>
       </form>
 
-      <button onClick={handleCreateTask}>Create Task</button>
     </div>
   );
 }
