@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import NavBar from '../Components/NavBar';
+import { API_URL } from '../config/vite.config';
 
 function NewTask() {
   const navigate = useNavigate();
