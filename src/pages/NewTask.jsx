@@ -29,10 +29,6 @@ function NewTask() {
     } catch (error) {
       console.error(error);
     }
-  
-    console.log('Create Task clicked');
-    console.log('Task Name:', taskName);
-    console.log('Description:', description);
   };
 
   return (
