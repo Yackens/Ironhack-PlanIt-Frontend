@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
 import OneTask from "../Components/OneTask";
 
 function CategoryTasks() {
@@ -8,9 +8,27 @@ function CategoryTasks() {
   const location = useLocation();
   const categoryName = location.state?.categoryName;
 
+  const { categoryId } = useParams();
+  console.log(categoryId);
+
+  const handlePassInformation = async (e) => {
+    e.preventDefault();
+
+    try {
+      const tokenInStorage = localStorage.getItem("authToken");
+      const response = await axios.get(`${API_URL}/api/categories/${categoryId}`, {headers: { authorization: `Bearer ${tokenInStorage}`}});
+
+      if (response.status === 201) {
+        // Redirect to the task page for the new category
+        navigate(`/categories`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleCreateNewTask = () => {
-    navigate('/task/new');
+    navigate(`/categories/${categoryId}/tasks/new`, {categoryId});
   };
 
   return (
@@ -28,7 +46,6 @@ function CategoryTasks() {
 
       <button onClick={handleCreateNewTask}>Create New Task</button>
       <h3>Tasks</h3>
-      
 
       <div>
         <OneTask />

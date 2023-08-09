@@ -17,7 +17,9 @@ function OneTask({ task }) {
 
     try {
       // Update the task's status using the API
-      await axios.put(`${API_URL}/api/tasks/${task._id}`, { status: newStatus });
+      const tokenInStorage = localStorage.getItem("authToken");
+
+      await axios.put(`${API_URL}/api/tasks/${task._id}`, { status: newStatus }, {headers: { authorization: `Bearer ${tokenInStorage}`}});
     } catch (error) {
       console.error(error);
     }
@@ -26,7 +28,9 @@ function OneTask({ task }) {
   const handleDelete = async () => {
     try {
       // Delete the task using the API
-      await axios.delete(`${API_URL}/api/tasks/${task._id}`);
+      const tokenInStorage = localStorage.getItem("authToken");
+
+      await axios.delete(`${API_URL}/api/tasks/${task._id}`, {headers: { authorization: `Bearer ${tokenInStorage}`}});
       // You could trigger a refresh of the task list here if needed
     } catch (error) {
       console.error(error);

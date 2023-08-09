@@ -1,7 +1,6 @@
 import React from "react";
 import HomePage from "../pages/Home";
 import Categories from "../pages/Categories"
-import Tasks from "../pages/CategoryTasks"
 import { Link } from "react-router-dom";
 
 
@@ -16,9 +15,6 @@ function Navbar() {
                     
                     <Link to='/categories'>
                        <p>Categories</p>
-                        </Link>
-                        <Link to='/tasks'>
-                       <p>Tasks</p>
                         </Link>
                         <Link to='/'>
                         <p>LogOut</p>

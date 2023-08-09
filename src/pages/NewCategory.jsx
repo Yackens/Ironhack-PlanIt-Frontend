@@ -12,14 +12,14 @@ function NewCategory() {
     e.preventDefault();
 
     try {
+      const tokenInStorage = localStorage.getItem("authToken");
       const response = await axios.post(`${API_URL}/api/categories/new`, {
         name: categoryName
-      });
+      }, {headers: { authorization: `Bearer ${tokenInStorage}`}});
 
       if (response.status === 201) {
         // Redirect to the task page for the new category
-        const newCategoryId = response.data._id;
-        navigate(`/tasks/${newCategoryId}`);
+        navigate(`/categories`);
       }
     } catch (error) {
       console.error(error);

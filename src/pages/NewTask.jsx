@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import NavBar from '../Components/NavBar';
 import { API_URL } from '../config/vite.config';
 
 function NewTask() {
   const navigate = useNavigate();
+  const { categoryId } = useParams();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState(new Date().toISOString().slice(0, 10));
@@ -15,16 +17,18 @@ function NewTask() {
     e.preventDefault();
 
     try {
+      const tokenInStorage = localStorage.getItem("authToken");
+
       const response = await axios.post(`${API_URL}/api/tasks/new`, {
         title: title,
         description: description,
-        dueDate: dueDate
-      });
+        dueDate: dueDate,
+        category: categoryId
+      }, {headers: { authorization: `Bearer ${tokenInStorage}`}});
 
       if (response.status === 201) {
         // Redirect to the task page for the new category
-        const newTaskId = response.data._id;
-        navigate(`/tasks/${newTaskId}`);
+        navigate(`/categories/${categoryId}`);
       }
     } catch (error) {
       console.error(error);

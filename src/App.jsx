@@ -17,8 +17,8 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/categories' element={ <IsPrivate><Categories /></IsPrivate>} />
       <Route path='/categories/new' element={ <IsPrivate><NewCategory /></IsPrivate> } />
-      <Route path='/tasks' element={<IsPrivate><CategoryTasks /></IsPrivate>} />
-      <Route path='/tasks/new' element={<IsPrivate><NewTask /></IsPrivate>} />
+      <Route path='/categories/:categoryId' element={<IsPrivate><CategoryTasks /></IsPrivate>} />
+      <Route path='/categories/:categoryId/tasks/new' element={<IsPrivate><NewTask /></IsPrivate>} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='*' element={<h1>404 page</h1>} />
     </Routes>

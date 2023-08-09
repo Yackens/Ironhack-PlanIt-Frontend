@@ -8,9 +8,15 @@ const Categories = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
 
+  const handleCreateNewCategory = () => {
+    navigate(`/categories/new`);
+  };
+
   const fetchCategories = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/categories/`);
+      const tokenInStorage = localStorage.getItem("authToken");
+      const response = await axios.get(`${API_URL}/api/categories`, {headers: { authorization: `Bearer ${tokenInStorage}` },
+    });
       if (response.status === 200) {
         setCategories(response.data);
       }
@@ -23,24 +29,11 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
-  const handleEdit = async (categoryId) => {
-    try {
-      // For editing
-      const updatedData = { /* updated data */ };
-      const editResponse = await axios.put(`${API_URL}/api/categories/${categoryId}`, updatedData);
-      if (editResponse.status === 200) {
-        fetchCategories(); // Fetch categories again after editing
-      }
-  
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const handleDelete = async (categoryId) => {
     try {
       // For deleting
-      const deleteResponse = await axios.delete(`${API_URL}/api/categories/${categoryId}`);
+      const tokenInStorage = localStorage.getItem("authToken");
+      const deleteResponse = await axios.delete(`${API_URL}/api/categories/${categoryId}`, {headers: { authorization: `Bearer ${tokenInStorage}`}});
       if (deleteResponse.status === 204) {
         fetchCategories();
       }
@@ -61,7 +54,7 @@ const Categories = () => {
 
       <h2>Categories</h2>
 
-      <button>Create Category</button>
+      <button onClick={handleCreateNewCategory}>Create Category</button>
 
       <input type="text" placeholder="Search.." />
 
@@ -70,18 +63,12 @@ const Categories = () => {
           <Link to={`/categories/${category._id}`} state={{ categoryName: category.name }}>
             {category.name}
           </Link>
-          <span
-            className="editLink"
-            onClick={() => handleEdit(category._id)}
-          >
-            Edit
-          </span>
-          <span
+          <button
             className="deleteLink"
             onClick={() => handleDelete(category._id)}
           >
             Delete
-          </span>
+          </button>
         </div>
       ))}
     </div>
