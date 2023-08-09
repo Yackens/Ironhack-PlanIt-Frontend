@@ -36,7 +36,6 @@ function OneTask({ task }) {
   return (
     <div className="task">
       <div>
-        <h3>{task.category.name}</h3>
         <div className="statusDiv">{status}</div>
         <p>{task.dueDate}</p>
       </div>

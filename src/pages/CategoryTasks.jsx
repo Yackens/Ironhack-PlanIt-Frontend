@@ -28,6 +28,7 @@ function CategoryTasks() {
 
       <button onClick={handleCreateNewTask}>Create New Task</button>
       <h3>Tasks</h3>
+      
 
       <div>
         <OneTask />
