@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import IsPrivate from './Components/isPrivate';
 import { AuthContextWrapper } from './pages/context/Auth.context'; 
+import UpdateTask from './pages/UpdateTask';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path='/categories/new' element={ <IsPrivate><NewCategory /></IsPrivate> } />
       <Route path='/categories/:categoryId' element={<IsPrivate><CategoryTasks /></IsPrivate>} />
       <Route path='/categories/:categoryId/tasks/new' element={<IsPrivate><NewTask /></IsPrivate>} />
+      <Route path='/tasks/:taskId/update' element={<IsPrivate><UpdateTask /></IsPrivate>} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='*' element={<h1>404 page</h1>} />
     </Routes>

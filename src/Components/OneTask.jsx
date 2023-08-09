@@ -2,35 +2,36 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css';
 import { API_URL } from '../config/vite.config';
+import { useNavigate, useParams } from "react-router-dom";
 
-function OneTask({ task }) {
+function OneTask({ task, tasks, setTasks }) {
+  const navigate = useNavigate();
+
   if (!task) {
     return <div>No task found.</div>;
   }
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString();
+  };
+
   // Initialize status state with the task's status
   const [status, setStatus] = useState(task.status);
 
-  const handleStatusChange = async (event) => {
-    const newStatus = event.target.value;
-    setStatus(newStatus);
-
-    try {
-      // Update the task's status using the API
-      const tokenInStorage = localStorage.getItem("authToken");
-
-      await axios.put(`${API_URL}/api/tasks/${task._id}`, { status: newStatus }, {headers: { authorization: `Bearer ${tokenInStorage}`}});
-    } catch (error) {
-      console.error(error);
-    }
+  const handleStatusChange = async () => {
+    navigate(`/tasks/${task._id}/update`, { state: { task } });
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (taskId, event) => {
+    event.preventDefault();
     try {
       // Delete the task using the API
       const tokenInStorage = localStorage.getItem("authToken");
-
       await axios.delete(`${API_URL}/api/tasks/${task._id}`, {headers: { authorization: `Bearer ${tokenInStorage}`}});
+      const updatedTasks = tasks.filter((task) => task._id !== taskId);
+      console.log(updatedTasks);
+      setTasks(updatedTasks);
       // You could trigger a refresh of the task list here if needed
     } catch (error) {
       console.error(error);
@@ -38,25 +39,26 @@ function OneTask({ task }) {
   };
 
   return (
-    <div className="task">
-      <div>
-        <div className="statusDiv">{status}</div>
-        <p>{task.dueDate}</p>
-      </div>
-      <div>
-        <p>{task.description}</p>
-      </div>
-      <div>
-        <label htmlFor="dropdown">Status</label>
-        <select id="dropdown" value={status} onChange={handleStatusChange}>
-          <option value="Not Started">Not Started</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Completed">Completed</option>
-        </select>
-        <button onClick={handleStatusChange}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
-        {/* You could add a button or link for editing here */}
-      </div>
+    <div className="tasks">
+        <div key={task._id}>
+          <h4>{task.title}</h4>
+          <p>Due Date: {formatDate(task.dueDate)}</p>
+          <p>{task.description}</p>
+          <p>Current Status: {task.status}</p>
+          <p>Created At: {formatDate(task.createdAt)}</p>
+          <button
+            className="editLink"
+            onClick={() => handleStatusChange(task._id)}
+          >
+            Edit
+          </button>
+          <button
+            className="deleteLink"
+            onClick={(event) => handleDelete(task._id, event)}
+          >
+            Delete
+          </button>
+        </div>
     </div>
   );
 }
