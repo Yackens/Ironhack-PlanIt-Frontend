@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Categories from './pages/Categories';
 import NewCategory from './pages/NewCategory';
-import Tasks from './pages/Tasks';
+import CategoryTasks from './pages/CategoryTasks';
 import NewTask from './pages/NewTask';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
@@ -17,7 +17,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/categories' element={ <IsPrivate><Categories /></IsPrivate>} />
       <Route path='/categories/new' element={ <IsPrivate><NewCategory /></IsPrivate> } />
-      <Route path='/tasks' element={<IsPrivate><Tasks /></IsPrivate>} />
+      <Route path='/tasks' element={<IsPrivate><CategoryTasks /></IsPrivate>} />
       <Route path='/tasks/new' element={<IsPrivate><NewTask /></IsPrivate>} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='*' element={<h1>404 page</h1>} />
