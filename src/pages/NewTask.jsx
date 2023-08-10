@@ -41,9 +41,10 @@ function NewTask() {
      <div className="logo">
                 <p>Plan<span>It</span></p>
          </div>
+         <NavBar />
       </div>
       
-      <NavBar />
+      
       
       <h3>Create New Task</h3>
 

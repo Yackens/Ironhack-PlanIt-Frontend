@@ -37,13 +37,15 @@ function CategoryTasks() {
   };
 
   return (
-    <div>
-          <div className='header'>
-     <div className="logo">
+    <div class="post">
+      <div className='header'>
+        <div className="logo">
                 <p>Plan<span>It</span></p>
-         </div>
+        </div>
+        <NavBar />
       </div>
-      <NavBar />
+
+      
       <h2>{categoryName}</h2>
       <button onClick={handleCreateNewTask} className='btn1'>Create New Task</button>
       <h3>Tasks</h3>

@@ -65,13 +65,13 @@ const Categories = () => {
 
   return (
     <div>
-        <div className='header'>
-     <div className="logo">
+    <div className='header'>
+        <div className="logo">
                 <p>Plan<span>It</span></p>
-         </div>
-
-         <NavBar />
+        </div>
+        <NavBar />
       </div>
+
 
       
 

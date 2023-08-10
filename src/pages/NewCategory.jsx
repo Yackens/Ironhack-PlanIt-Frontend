@@ -32,9 +32,10 @@ function NewCategory() {
      <div className="logo">
                 <p>Plan<span>It</span></p>
          </div>
+         <NavBar />
       </div>
 
-      <NavBar />
+      
       <h2>Create your new Category</h2>
 
       <form className="signFlex" onSubmit={handleCreateCategory}>

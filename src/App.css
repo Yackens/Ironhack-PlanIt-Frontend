@@ -94,6 +94,14 @@ ul{
   list-style: none;
 }
 
+ul li {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  margin-right: 2em;
+  padding-top: 1em;
+}
 
 
 .statusDiv {
@@ -137,6 +145,21 @@ ul{
   color: #54EFEF;
   font-size: 2rem;
  }
+
+ .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0vw;
+  position: fixed;
+  top: 1em;
+  left: 2em;
+  padding: 1em; 
+  width: 100vw;
+  
+}
+
 
  span {
   color: white;
@@ -190,6 +213,8 @@ ul{
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  display: block;
+  margin: 0 auto;
  }
 
  .btn1:hover {
@@ -199,20 +224,13 @@ ul{
 }
 
 .btn2 {
-  background-color: red;
-  height: 56px;
-  width: 40%;
-  max-width: 110px;
-  margin-top: 2em;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 800;
-  text-shadow: 0px 2px 5px #4f1313;
-  box-shadow: 0px 8px 16px rgba(255, 0, 0, 0.2);;
-  transition: all 0.3s ease 0s;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
   cursor: pointer;
-  outline: none;
-  margin-left: 2em;;
+  margin-left: 2em;
  }
 
  .btn2:hover {
@@ -268,6 +286,13 @@ ul{
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.post {
+  border: 1px solid #46D3D3;
+}
+
+
+
 
 
 
