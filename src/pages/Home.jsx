@@ -50,7 +50,7 @@ function Home() {
     
     
 /
-    <h1>Just plan <span>it!</span></h1>
+    <h1>Just plan <span>it</span>!</h1>
 
     <form className="signFlex" onSubmit={handleLogin}>
     <label>
@@ -79,7 +79,7 @@ function Home() {
 
     <button className="btn1" type="submit">LogIn</button>
     </form>
-
+    <p className='space'>Don’t have an account?</p>
     <Link to="/signup">
         <button className="btnSignUp">SignUp</button>
       </Link>

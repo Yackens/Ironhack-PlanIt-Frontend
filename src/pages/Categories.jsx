@@ -75,7 +75,7 @@ const Categories = () => {
 
       
 
-      <h2>Your Categories, <span>{username}</span> !</h2>
+      <h2 className='catH2'>Your Categories, <span>{username}</span> !</h2>
     
       <button className="btn1"  onClick={handleCreateNewCategory}>Create Category</button>
 

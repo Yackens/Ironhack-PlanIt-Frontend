@@ -37,8 +37,8 @@ function NewTask() {
 
   return (
     <div>
-          <div className='header'>
-     <div className="logo">
+      <div className='header'>
+          <div className="logo">
                 <p>Plan<span>It</span></p>
          </div>
          <NavBar />
@@ -46,7 +46,7 @@ function NewTask() {
       
       
       
-      <h3>Create New Task</h3>
+      <h2>Create New Task</h2>
 
       <form className="signFlex">
         <label>

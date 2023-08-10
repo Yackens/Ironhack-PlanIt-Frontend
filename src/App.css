@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 body {
@@ -26,14 +27,14 @@ body {
 
 h1 {
   color: #93E1EE;
-  font-size: 4.5rem;
+  font-size: 6rem;
   margin-bottom: 55px;
  }
 
  h2 {
   
   color: #93E1EE;
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 55px;
  }
 
@@ -92,6 +93,7 @@ h1 {
 
 ul{
   list-style: none;
+  color: #54EFEF;
 }
 
 ul li {
@@ -152,13 +154,16 @@ ul li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0vw;
+  gap: 40vw;
   position: fixed;
-  top: 1em;
+  top: 0;
   left: 0;
   padding: 1em; 
   width: 100vw;
-  
+  background-color: #0F2C35; 
+  border-bottom: 1px solid white;
+  z-index: 3;
+  height: 7vh;
 }
 
 
@@ -179,6 +184,8 @@ ul li {
   align-items: flex-start;
  }
 
+
+
  textarea {
   border-color: #1C7381;
   border-radius: 14px;
@@ -192,6 +199,7 @@ ul li {
   border-color: #1C7381;
   max-width: 500px;
   border-radius:8px;
+  padding-left: 5px;
  }
 
  label {
@@ -203,8 +211,7 @@ ul li {
  .btn1 {
   background-color: #46D3D3;
   height: 56px;
-  max-width: 400px;
-  min-width: 30vw;
+  width: 500px;
   margin-top: 2em;
   color: white;
   font-size: 1.2rem;
@@ -216,6 +223,7 @@ ul li {
   outline: none;
   display: block;
   margin: 0 auto;
+  margin-top: 30px;
  }
 
  .btn1:hover {
@@ -252,15 +260,15 @@ ul li {
  }
 
  .styled-link {
-  text-decoration: underline; 
-  color: #54EFEF; 
+
+  color: #54EFEF ;
   font-size: 1.2rem;
 
 }
 
 .styled-link:hover {
+  color: #54EFEF;
   text-decoration: none; 
-  color: #46D3D3; 
   font-size: 1rem;
   
 }
@@ -270,6 +278,7 @@ ul li {
   flex-direction: column;
   align-items: flex-start;
   height: 84px;
+  max-width: 500px;
  }
 
  .editLink {
@@ -299,12 +308,21 @@ ul li {
   border: 1px solid white;
   margin-bottom: 32px;
   padding-bottom: 40px;
-  background: rgba(0, 234, 255, 0.2);
-box-shadow: 0 8px 32px 0 rgba(0, 255, 229, 0.1);
+  background: rgba(2, 69, 75, 0.2);
+box-shadow: 0 8px 32px 0 rgba(7, 123, 133, 0.1);
 backdrop-filter: blur( 5.5px );
 -webkit-backdrop-filter: blur( 5.5px );
 border-radius: 10px;
+width: 50vw;
+margin-left: auto;
+margin-right: auto;
 
+transition: transform 0.3s ease;
+
+}
+
+.tasks:hover {
+  transform: scale(1.1);
 }
 
 .btnSignUp  {
@@ -322,7 +340,7 @@ border-radius: 10px;
     cursor: pointer;
     outline: none;
     display: block;
-    margin: 32px auto 0 auto;
+    margin: 0 auto;
    }
   
    .btnSignUp:hover {
@@ -333,6 +351,118 @@ border-radius: 10px;
 
 .hide {
   display: none !important;
+  
+}
+
+.space {
+  margin-top: 30px;
+}
+
+
+.spacer {
+ 
+  margin-top: 200px;;
+}
+
+
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em; 
+    width: 100vw;
+    background-color: #0F2C35; 
+    border-bottom: 1px solid white;
+    z-index: 3;
+    height: 7vh;
+    gap: 2px;
+  
+  }
+  h1 {
+    color: #93E1EE;
+    font-size: 4.5rem;
+    margin-bottom: 55px;
+   }
+  
+   h2 {
+    margin-top: 64px;
+    color: #93E1EE;
+    font-size: 2.3rem;
+    margin-bottom: 32px;
+   }
+
+   .catH2 {
+    margin-top: 1.3em;
+   }
+
+   .btnSignUp  {
+    background-color: #46D3D3;
+    height: 56px;
+    max-width: 400px;
+    min-width: 70vw;
+    margin-top: 2em;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    text-shadow: 0px 2px 5px #13474F;
+    box-shadow: 0px 8px 16px #1C7381;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+   }
+  
+   .btnSignUp:hover {
+    background-color: #46D3D3;
+    box-shadow: 0px 15px 20px #1C7381;
+    transform: translateY(-7px);
+  }
+
+  .btn1 {
+    background-color: #46D3D3;
+    height: 56px;
+    max-width: 300px;
+    min-width: 70vw;
+    margin-top: 2em;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    text-shadow: 0px 2px 5px #13474F;
+    box-shadow: 0px 8px 16px #1C7381;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+   }
+  
+   .btn1:hover {
+    background-color: #46D3D3;
+    box-shadow: 0px 15px 20px #1C7381;
+    transform: translateY(-7px);
+  }
+
+  .styled-link {
+
+    color: #54EFEF ;
+    font-size: 1rem;
+  
+  }
+  
+  .styled-link:hover {
+    color: #54EFEF;
+    text-decoration: none; 
+    font-size: 0.9rem;
+    
+  }
   
 }
 

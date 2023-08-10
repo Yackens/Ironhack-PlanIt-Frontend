@@ -35,7 +35,7 @@ function Signup() {
          </div>
       </div>
      
-      <h2>Create a free account</h2>
+      <h2>Create a <span>free</span> account</h2>
       <form className="signFlex"  onSubmit={handleSignup}>
         <label>
           Username:
