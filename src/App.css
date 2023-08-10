@@ -432,7 +432,7 @@ transition: transform 0.3s ease;
    .btnSignUp  {
     background-color: #46D3D3;
     height: 56px;
-    max-width: 400px;
+    max-width: 300px;
     min-width: 70vw;
     margin-top: 2em;
     color: white;
