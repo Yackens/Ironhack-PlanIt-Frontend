@@ -331,7 +331,10 @@ border-radius: 10px;
     transform: translateY(-7px);
   }
 
-
+.hide {
+  display: none !important;
+  margin: 0 auto;
+}
 
 
 

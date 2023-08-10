@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/vite.config";
+import NavBar from '../Components/NavBar';
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -25,9 +26,12 @@ function Signup() {
   return (
     <div>
 
-      <div className='header'>
-       <div className="logo">
+<div className='header'>
+     <div className="logo">
                 <p>Plan<span>It</span></p>
+         </div>
+         <div className="hide">
+         <NavBar />
          </div>
       </div>
      
@@ -66,7 +70,7 @@ function Signup() {
             }}
           />
         </label>
-        <button className="btnSignUp" type="submit">Signup</button>
+        <button className="btn1" type="submit">Signup</button>
       </form>
     </div>
   );

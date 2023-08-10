@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './context/Auth.context';
 import { API_URL } from '../config/vite.config';
+import NavBar from '../Components/NavBar';
 
 function Home() {
   const [username, setUsername] = useState("");
@@ -36,11 +37,17 @@ function Home() {
 
   return (
    <div>
-      <div className='header'>
+    
+    <div className='header'>
      <div className="logo">
                 <p>Plan<span>It</span></p>
          </div>
+         <div className="hide">
+         <NavBar />
+         </div>
       </div>
+         
+    
     
 /
     <h1>Just plan <span>it!</span></h1>
@@ -74,7 +81,7 @@ function Home() {
     </form>
 
     <Link to="/signup">
-        <button className="btn1">SignUp</button>
+        <button className="btnSignUp">SignUp</button>
       </Link>
     </div> 
   )
