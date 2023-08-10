@@ -7,6 +7,8 @@ import { API_URL } from '../config/vite.config';
 const Categories = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
 
   const handleCreateNewCategory = () => {
     navigate(`/categories/new`);
@@ -15,7 +17,7 @@ const Categories = () => {
   const fetchCategories = async () => {
     try {
       const tokenInStorage = localStorage.getItem("authToken");
-      const response = await axios.get(`${API_URL}/api/categories`, {headers: { authorization: `Bearer ${tokenInStorage}` },
+      const response = await axios.get(`${API_URL}/api/categories/search?q=${searchQuery}`, {headers: { authorization: `Bearer ${tokenInStorage}` },
     });
       if (response.status === 200) {
         setCategories(response.data);
@@ -27,7 +29,7 @@ const Categories = () => {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [searchQuery]);
 
   const handleDelete = async (categoryId) => {
     try {
@@ -56,7 +58,12 @@ const Categories = () => {
 
       <button onClick={handleCreateNewCategory}>Create Category</button>
 
-      <input type="text" placeholder="Search.." />
+      <input
+        type="text"
+        placeholder="Search for categories..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
 
       {categories.map(category => (
         <div key={category._id}>

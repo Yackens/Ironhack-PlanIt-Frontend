@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import IsPrivate from './Components/isPrivate';
 import { AuthContextWrapper } from './pages/context/Auth.context'; 
 import UpdateTask from './pages/UpdateTask';
+import Error404 from './pages/Error404';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route path='/categories/:categoryId/tasks/new' element={<IsPrivate><NewTask /></IsPrivate>} />
       <Route path='/tasks/:taskId/update' element={<IsPrivate><UpdateTask /></IsPrivate>} />
       <Route path='/signup' element={<SignUp />} />
-      <Route path='*' element={<h1>404 page</h1>} />
+      <Route path='*' element={<Error404/>} />
     </Routes>
     </AuthContextWrapper>
   );
