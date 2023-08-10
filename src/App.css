@@ -95,6 +95,7 @@ ul{
 }
 
 ul li {
+  color: #54EFEF;
   list-style: none;
   display: flex;
   gap: 1em;
@@ -294,6 +295,41 @@ ul li {
   border: 1px solid #46D3D3;
 }
 
+.tasks  {
+  border: 1px solid white;
+  margin-bottom: 32px;
+  padding-bottom: 40px;
+  background: rgba(0, 234, 255, 0.2);
+box-shadow: 0 8px 32px 0 rgba(0, 255, 229, 0.1);
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+
+}
+
+.btnSignUp  {
+    background-color: #46D3D3;
+    height: 56px;
+    max-width: 400px;
+    min-width: 30vw;
+    margin-top: 2em;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-shadow: 0px 2px 5px #13474F;
+    box-shadow: 0px 8px 16px #1C7381;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin: 32px auto 0 auto;
+   }
+  
+   .btnSignUp:hover {
+    background-color: #46D3D3;
+    box-shadow: 0px 15px 20px #1C7381;
+    transform: translateY(-7px);
+  }
 
 
 

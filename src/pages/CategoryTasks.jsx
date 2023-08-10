@@ -37,25 +37,26 @@ function CategoryTasks() {
   };
 
   return (
-    <div className="post">
+    <div className='container'>
       <div className='header'>
         <div className="logo">
                 <p>Plan<span>It</span></p>
         </div>
         <NavBar />
       </div>
-
+      
       
       <h2>{categoryName}</h2>
       <button onClick={handleCreateNewTask} className='btn1'>Create New Task</button>
       <h3>Tasks</h3>
-
+    
+    
       <div>
         {tasks.map((task) => (
           <OneTask key={task.id} task={task} tasks = {tasks} setTasks = {setTasks}/>
         ))}
       </div>
-    </div>
+      </div>
   );
 }
 
