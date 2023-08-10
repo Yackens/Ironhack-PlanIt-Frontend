@@ -6,6 +6,20 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function OneTask({ task, tasks, setTasks }) {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-spinner">
+        <div className="spinner"></div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   if (!task) {
     return <div>No task found.</div>;
@@ -15,9 +29,6 @@ function OneTask({ task, tasks, setTasks }) {
     const date = new Date(dateString);
     return date.toLocaleDateString();
   };
-
-  // Initialize status state with the task's status
-  const [status, setStatus] = useState(task.status);
 
   const handleStatusChange = async () => {
     navigate(`/tasks/${task._id}/update`, { state: { task } });
