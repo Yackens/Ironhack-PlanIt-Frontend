@@ -45,7 +45,6 @@ function NewTask() {
       
       <NavBar />
       {/**needs to be done */}
-      <h2>categoryName</h2>
       <h3>Create New Task</h3>
 
       <form>

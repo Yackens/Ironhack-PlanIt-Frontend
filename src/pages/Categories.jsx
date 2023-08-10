@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/vite.config';
+import { AuthContext } from '../pages/context/Auth.context'
 
 const Categories = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [username, setUsername] = useState("");
 
+  const authContext = useContext(AuthContext);
 
   const handleCreateNewCategory = () => {
     navigate(`/categories/new`);
@@ -28,8 +31,24 @@ const Categories = () => {
   }
 
   useEffect(() => {
+    // Fetch the username from the server
+    const fetchUsername = async () => {
+      try {
+        const tokenInStorage = localStorage.getItem("authToken");
+        const response = await axios.get(`${API_URL}/auth/username`, { headers: { authorization: `Bearer ${tokenInStorage}` } });
+        console.log(response);
+        if (response.status === 200) {
+          setUsername(response.data.username);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchCategories();
-  }, [searchQuery]);
+    fetchUsername();
+
+  }, [searchQuery, authContext]);
 
   const handleDelete = async (categoryId) => {
     try {
@@ -54,7 +73,7 @@ const Categories = () => {
 
       <NavBar />
 
-      <h2>Categories</h2>
+      <h2>Your Categories, {username}!</h2>
 
       <button onClick={handleCreateNewCategory}>Create Category</button>
 
