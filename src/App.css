@@ -148,6 +148,13 @@ ul{
   align-items: flex-start;
  }
 
+ textarea {
+  border-color: #1C7381;
+  border-radius: 14px;
+  width: 70vw;
+  max-width: 600px;
+ } 
+
  input {
   height: 44px;
   width: 70vw;
@@ -227,3 +234,10 @@ ul{
   color: #46D3D3; 
   font-size: 1.8rem;
 }
+
+.areaFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 84px;
+ }

@@ -47,30 +47,30 @@ function NewTask() {
       
       <h3>Create New Task</h3>
 
-      <form>
+      <form className="signFlex">
         <label>
           Task Title:
-          <input
+          <input className="inputFlex"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </label>
         <label>
           Description:
-          <textarea
+          <textarea className="areaFlex"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
         <label>
           Due Date:
-          <input
+          <input className="inputFlex"
             type="date"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
           />
         </label>
-        <button onClick={handleCreateTask}>Create Task</button>
+        <button onClick={handleCreateTask} className='btn1'>Create Task</button>
       </form>
 
     </div>
