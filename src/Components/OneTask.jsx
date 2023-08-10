@@ -37,26 +37,26 @@ function OneTask({ task, tasks, setTasks }) {
 
   return (
     <div className="tasks">
-        <div key={task._id}>
-          <h4>{task.title}</h4>
-          <p>Due Date: {formatDate(task.dueDate)}</p>
-          <p>{task.description}</p>
-          <p>Current Status: {task.status}</p>
-          <p>Created At: {formatDate(task.createdAt)}</p>
-          <button
-            className="editLink"
-            onClick={() => handleStatusChange(task._id)}
-          >
-            Edit
-          </button>
-          <button
-            className="deleteLink"
-            onClick={(event) => handleDelete(task._id, event)}
-          >
-            Delete
-          </button>
-        </div>
+    <div key={task._id}>
+      <h4>{task.title}</h4>
+      <p>Due Date: {formatDate(task.dueDate)}</p>
+      <p>{task.description}</p>
+      <p>Current Status: {task.status}</p>
+      <p>Created At: {formatDate(task.createdAt)}</p>
+      <button
+        className="editLink"
+        onClick={() => handleStatusChange(task._id)}
+      >
+        Edit
+      </button>
+      <button
+        className="deleteLink"
+        onClick={(event) => handleDelete(task._id, event)}
+      >
+        Delete
+      </button>
     </div>
+</div>
   );
 }
 

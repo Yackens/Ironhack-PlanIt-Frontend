@@ -39,6 +39,13 @@ h1 {
 
  h3{
   color: #93E1EE;
+  font-size: 2rem;
+
+ }
+
+ h4{
+  color: #93E1EE;
+  font-size: 1.5rem;
 
  }
 
@@ -172,7 +179,8 @@ ul{
  .btn1 {
   background-color: #46D3D3;
   height: 56px;
-  width: 80%;
+  max-width: 400px;
+  min-width: 30vw;
   margin-top: 2em;
   color: white;
   font-size: 1.2rem;
@@ -191,7 +199,7 @@ ul{
 }
 
 .btn2 {
-  background-color: #46D3D3;
+  background-color: red;
   height: 56px;
   width: 40%;
   max-width: 110px;
@@ -199,8 +207,8 @@ ul{
   color: white;
   font-size: 1.2rem;
   font-weight: 800;
-  text-shadow: 0px 2px 5px #13474F;
-  box-shadow: 0px 8px 16px #1C7381;
+  text-shadow: 0px 2px 5px #4f1313;
+  box-shadow: 0px 8px 16px rgba(255, 0, 0, 0.2);;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -208,8 +216,8 @@ ul{
  }
 
  .btn2:hover {
-  background-color: #46D3D3;
-  box-shadow: 0px 15px 20px #1C7381;
+  background-color: red;
+  box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.2);
   transform: translateY(-7px);
 }
 
@@ -241,3 +249,26 @@ ul{
   align-items: flex-start;
   height: 84px;
  }
+
+ .editLink {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.deleteLink {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+
