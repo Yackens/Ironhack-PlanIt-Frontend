@@ -151,11 +151,11 @@ ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 0vw;
   position: fixed;
   top: 1em;
-  left: 2em;
+  left: 0;
   padding: 1em; 
   width: 100vw;
   
@@ -333,7 +333,7 @@ border-radius: 10px;
 
 .hide {
   display: none !important;
-  margin: 0 auto;
+  
 }
 
 
