@@ -22,7 +22,7 @@ function Navbar() {
             <p>Categories</p>
           </Link>
           <Link to="/" onClick={handleLogout} className="styled-link">
-            <p>LogOut</p>
+            <p>Log out</p>
           </Link>
         </li>
       </ul>

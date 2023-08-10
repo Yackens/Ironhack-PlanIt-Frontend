@@ -75,7 +75,7 @@ const Categories = () => {
 
       
 
-      <h2 className='catH2'>Your Categories, <span>{username}</span> !</h2>
+      <h2 className='catH2'>Your categories, <span>{username}</span> !</h2>
     
       <button className="btn1"  onClick={handleCreateNewCategory}>Create Category</button>
 
@@ -87,10 +87,12 @@ const Categories = () => {
       />
     <div className='wrapper'>
       {categories.map(category => (
-        <div key={category._id} >
+        <div key={category._id} className="category-item">
+          <div className='category-info'>
           <Link to={`/categories/${category._id}`} state={{ categoryName: category.name }} className="styled-link">
             {category.name}
           </Link>
+        </div>
           <button 
             className="btn2" 
             onClick={() => handleDelete(category._id)}

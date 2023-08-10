@@ -70,7 +70,7 @@ function Signup() {
             }}
           />
         </label>
-        <button className="btn1" type="submit">Signup</button>
+        <button className="btn1" type="submit">Sign up</button>
       </form>
     </div>
   );

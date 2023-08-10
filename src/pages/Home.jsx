@@ -81,7 +81,7 @@ function Home() {
     </form>
     <p className='space'>Don’t have an account?</p>
     <Link to="/signup">
-        <button className="btnSignUp">SignUp</button>
+        <button className="btnSignUp">Sign up</button>
       </Link>
     </div> 
   )
