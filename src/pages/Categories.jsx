@@ -65,39 +65,44 @@ const Categories = () => {
 
   return (
     <div>
-      <div id="logo">
-        <Link to='/'>
-          <p>PlanIt</p>
-        </Link>
+        <div className='header'>
+     <div className="logo">
+                <p>Plan<span>It</span></p>
+         </div>
+
+         <NavBar />
       </div>
 
-      <NavBar />
+      
 
-      <h2>Your Categories, {username}!</h2>
+      <h2>Your Categories, <span>{username}</span> !</h2>
+    
+      <button className="btn1"  onClick={handleCreateNewCategory}>Create Category</button>
 
-      <button onClick={handleCreateNewCategory}>Create Category</button>
-
-      <input
+      <input className="search"
         type="text"
         placeholder="Search for categories..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-
+    <div className='wrapper'>
       {categories.map(category => (
-        <div key={category._id}>
-          <Link to={`/categories/${category._id}`} state={{ categoryName: category.name }}>
+        <div key={category._id} >
+          <Link to={`/categories/${category._id}`} state={{ categoryName: category.name }} className="styled-link">
             {category.name}
           </Link>
-          <button
-            className="deleteLink"
+          <button 
+            className="btn2" 
             onClick={() => handleDelete(category._id)}
           >
             Delete
           </button>
+      
         </div>
       ))}
     </div>
+    </div>
+    
   );
 }
 

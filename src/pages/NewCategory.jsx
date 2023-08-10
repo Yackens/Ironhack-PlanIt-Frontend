@@ -35,19 +35,19 @@ function NewCategory() {
       </div>
 
       <NavBar />
-      <h2>Create Category</h2>
+      <h2>Create your new Category</h2>
 
-      <form onSubmit={handleCreateCategory}>
+      <form className="signFlex" onSubmit={handleCreateCategory}>
         <label>
-          Category name
-          <input
+          Category name:
+          <input className="inputFlex"
             type="text"
             value={categoryName}
             onChange={(e) => setCategoryName(e.target.value)}
             required
           />
         </label>
-        <button type="submit">Create</button>
+        <button className="btn1" type="submit">Create</button>
       </form>
     </div>
   );

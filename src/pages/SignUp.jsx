@@ -24,12 +24,18 @@ function Signup() {
   };
   return (
     <div>
+
+      <div className='header'>
+       <div className="logo">
+                <p>Plan<span>It</span></p>
+         </div>
+      </div>
      
-      <h2>Sign Up Page</h2>
-      <form onSubmit={handleSignup}>
+      <h2>Create a free account</h2>
+      <form className="signFlex"  onSubmit={handleSignup}>
         <label>
-          username:
-          <input
+          Username:
+          <input className="inputFlex"
             type="text"
             value={username}
             required
@@ -40,7 +46,7 @@ function Signup() {
         </label>
         <label>
           Email:
-          <input
+          <input className="inputFlex"
             type="email"
             value={email}
             required
@@ -51,7 +57,7 @@ function Signup() {
         </label>
         <label>
           Password:
-          <input
+          <input className="inputFlex"
             type="password"
             value={password}
             required
@@ -60,7 +66,7 @@ function Signup() {
             }}
           />
         </label>
-        <button type="submit">Signup</button>
+        <button className="btn1" type="submit">Signup</button>
       </form>
     </div>
   );

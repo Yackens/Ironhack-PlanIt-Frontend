@@ -1,5 +1,4 @@
 //Home.jsx
-
 import React from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -37,20 +36,19 @@ function Home() {
 
   return (
    <div>
-    
-        <div id="logo">
-            <Link to='/'>
-                <p>PlanIt</p>
-            </Link>
+      <div className='header'>
+     <div className="logo">
+                <p>Plan<span>It</span></p>
          </div>
+      </div>
     
-// needs to be added
-    <h1>Hey USER Just plan it!</h1>
+/
+    <h1>Just plan <span>it!</span></h1>
 
-    <form onSubmit={handleLogin}>
+    <form className="signFlex" onSubmit={handleLogin}>
     <label>
       Username
-      <input
+      <input className="inputFlex"
             type="text"
             value={username}
             required
@@ -62,7 +60,7 @@ function Home() {
 
     <label>
           Password:
-          <input
+          <input className="inputFlex"
             type="password"
             value={password}
             required
@@ -72,11 +70,11 @@ function Home() {
           />
         </label>
 
-    <button type="submit">LogIn</button>
+    <button className="btn1" type="submit">LogIn</button>
     </form>
 
     <Link to="/signup">
-        <button>SignUp</button>
+        <button className="btn1">SignUp</button>
       </Link>
     </div> 
   )

@@ -44,7 +44,7 @@ function NewTask() {
       </div>
       
       <NavBar />
-      {/**needs to be done */}
+      
       <h3>Create New Task</h3>
 
       <form>
