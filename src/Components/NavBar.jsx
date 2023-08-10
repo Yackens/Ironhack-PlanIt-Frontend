@@ -18,10 +18,10 @@ function Navbar() {
     <nav>
       <ul>
         <li>
-          <Link to="/categories">
+          <Link to="/categories" className="styled-link">
             <p>Categories</p>
           </Link>
-          <Link to="/" onClick={handleLogout}>
+          <Link to="/" onClick={handleLogout} className="styled-link">
             <p>LogOut</p>
           </Link>
         </li>

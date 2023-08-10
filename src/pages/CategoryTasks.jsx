@@ -37,7 +37,7 @@ function CategoryTasks() {
   };
 
   return (
-    <div class="post">
+    <div className="post">
       <div className='header'>
         <div className="logo">
                 <p>Plan<span>It</span></p>

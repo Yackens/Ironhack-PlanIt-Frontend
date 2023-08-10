@@ -189,7 +189,7 @@ ul li {
   height: 44px;
   width: 70vw;
   border-color: #1C7381;
-  max-width: 600px;
+  max-width: 500px;
   border-radius:8px;
  }
 
@@ -231,6 +231,7 @@ ul li {
   padding: 5px 10px;
   cursor: pointer;
   margin-left: 2em;
+  margin-top: 32px;
  }
 
  .btn2:hover {
@@ -252,13 +253,15 @@ ul li {
  .styled-link {
   text-decoration: underline; 
   color: #54EFEF; 
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+
 }
 
 .styled-link:hover {
   text-decoration: none; 
   color: #46D3D3; 
-  font-size: 1.8rem;
+  font-size: 1rem;
+  
 }
 
 .areaFlex {
