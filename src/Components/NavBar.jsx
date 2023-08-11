@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../pages/context/Auth.context";
 
+
 function Navbar() {
   const authContext = useContext(AuthContext);
 
