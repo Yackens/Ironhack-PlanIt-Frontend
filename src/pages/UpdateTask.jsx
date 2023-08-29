@@ -88,7 +88,7 @@ function UpdateTask() {
         </label>
         <label>
           Status:
-          <select id="dropdown" value={status} onChange={(e) => setStatus(e.target.value)}>
+          <select className="inputFlex" id="dropdown" value={status} onChange={(e) => setStatus(e.target.value)}>
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
