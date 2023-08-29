@@ -94,7 +94,7 @@ function UpdateTask() {
             <option value="Completed">Completed</option>
           </select>
         </label>
-        <button onClick={handleUpdateTask}>Save</button>
+        <button className="btn1" onClick={handleUpdateTask}>Save</button>
       </form>
     </div>
   );
