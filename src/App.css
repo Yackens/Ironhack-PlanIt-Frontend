@@ -257,7 +257,7 @@ ul li {
  .btn2:hover {
   background-color: red;
   box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.2);
-  transform: translateY(-7px);
+  
 }
 
 .search {
