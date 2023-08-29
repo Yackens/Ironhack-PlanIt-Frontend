@@ -47,9 +47,6 @@ function Home() {
          </div>
       </div>
          
-    
-    
-/
     <h1>Just plan <span>it</span>!</h1>
 
     <form className="signFlex" onSubmit={handleLogin}>
