@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/vite.config";
 import NavBar from '../Components/NavBar';
+import { Link } from "react-router-dom";
+
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -72,6 +74,10 @@ function Signup() {
         </label>
         <button className="btn1" type="submit">Sign up</button>
       </form>
+      <p className='space'>Allready have an account?</p>
+      <Link to="/">
+        <button className="btnSignUp">Log in</button>
+      </Link>
     </div>
   );
 }
