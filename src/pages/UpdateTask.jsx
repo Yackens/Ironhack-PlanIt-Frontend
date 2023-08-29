@@ -52,10 +52,11 @@ function UpdateTask() {
 
   return (
     <div>
-      <div id="logo">
-        <Link to="/">
-          <p>PlanIt</p>
-        </Link>
+      <div className='header'>
+          <div className="logo">
+                <p>Plan<span>It</span></p>
+         </div>
+         <NavBar />
       </div>
 
       <NavBar />
