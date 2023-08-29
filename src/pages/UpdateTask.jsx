@@ -73,7 +73,7 @@ function UpdateTask() {
         </label>
         <label>
           Description:
-          <textarea
+          <textarea className="areaFlex"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
