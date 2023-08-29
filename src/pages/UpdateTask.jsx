@@ -61,12 +61,12 @@ function UpdateTask() {
 
     
       <h2>{/* Display category name here */}</h2>
-      <h3>Update Task</h3>
+      <h2>Update Task</h2>
 
-      <form>
+      <form className="signFlex">
         <label>
           Task Title:
-          <input
+          <input className="inputFlex"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -80,7 +80,7 @@ function UpdateTask() {
         </label>
         <label>
           Due Date:
-          <input
+          <input className="inputFlex"
             type="date"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
