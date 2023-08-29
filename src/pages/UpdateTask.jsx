@@ -59,7 +59,7 @@ function UpdateTask() {
          <NavBar />
       </div>
 
-      <NavBar />
+    
       <h2>{/* Display category name here */}</h2>
       <h3>Update Task</h3>
 
