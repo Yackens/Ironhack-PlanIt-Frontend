@@ -3,16 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../pages/context/Auth.context";
 
 function Navbar() {
-  const authContext = useContext(AuthContext);
-
-  const handleLogout = () => {
-    // Clear the authToken from localStorage
-    localStorage.removeItem("authToken");
-
-    // Reset authentication state
-    authContext.setUser(null);
-    authContext.setIsLoggedIn(false);
-  };
+  const { logOutUser } = useContext(AuthContext);
 
   return (
     <nav>
@@ -21,7 +12,7 @@ function Navbar() {
           <Link to="/categories" className="styled-link">
             <p>Categories</p>
           </Link>
-          <Link to="/" onClick={handleLogout} className="styled-link">
+          <Link to="/" onClick={logOutUser} className="styled-link">
             <p>Log out</p>
           </Link>
         </li>
