@@ -27,7 +27,6 @@ function OneTask({ task, tasks, setTasks }) {
       const tokenInStorage = localStorage.getItem("authToken");
       await axios.delete(`${API_URL}/api/tasks/${task._id}`, {headers: { authorization: `Bearer ${tokenInStorage}`}});
       const updatedTasks = tasks.filter((task) => task._id !== taskId);
-      console.log(updatedTasks);
       setTasks(updatedTasks);
       // You could trigger a refresh of the task list here if needed
     } catch (error) {

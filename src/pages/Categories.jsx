@@ -20,7 +20,7 @@ const Categories = () => {
   const fetchCategories = async () => {
     try {
       const tokenInStorage = localStorage.getItem("authToken");
-      const response = await axios.get(`${API_URL}/api/categories/search?q=${searchQuery}`, {headers: { authorization: `Bearer ${tokenInStorage}` },
+      const response = await axios.get(`${API_URL}/api/categories/search?q=${encodeURIComponent(searchQuery)}`, {headers: { authorization: `Bearer ${tokenInStorage}` },
     });
       if (response.status === 200) {
         setCategories(response.data);
@@ -36,7 +36,6 @@ const Categories = () => {
       try {
         const tokenInStorage = localStorage.getItem("authToken");
         const response = await axios.get(`${API_URL}/auth/username`, { headers: { authorization: `Bearer ${tokenInStorage}` } });
-        console.log(response);
         if (response.status === 200) {
           setUsername(response.data.username);
         }

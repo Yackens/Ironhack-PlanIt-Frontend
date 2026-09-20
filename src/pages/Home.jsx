@@ -24,14 +24,12 @@ function Home() {
          username,
          password,
        });
-       console.log("here is the Login response", data);
        localStorage.setItem("authToken", data.token);
        
        await authenticateUser();
        nav("/categories");
      } catch (err) {
-       console.log(err);
-       setErrorMessage(err.response.data.errorMessage);
+       setErrorMessage(err.response?.data?.errorMessage ?? "Login failed.");
      }
    };
 

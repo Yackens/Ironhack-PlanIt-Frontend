@@ -14,15 +14,15 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/auth/signup`, {
+      await axios.post(`${API_URL}/auth/signup`, {
         email,
         password,
         username,
       });
-      console.log("here is the signup response", res);
       nav("/");
-    } catch (err) {
-      console.log(err);
+    } catch {
+      // Fehlerobjekt bewusst nicht loggen: es enthaelt in config.data
+      // die gesendeten Zugangsdaten.
     }
   };
   return (
