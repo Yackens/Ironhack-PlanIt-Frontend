@@ -10,9 +10,11 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
   const nav = useNavigate();
   const handleSignup = async (e) => {
     e.preventDefault();
+    setErrorMessage(null);
     try {
       await axios.post(`${API_URL}/auth/signup`, {
         email,
@@ -20,9 +22,10 @@ function Signup() {
         username,
       });
       nav("/");
-    } catch {
+    } catch (err) {
       // Fehlerobjekt bewusst nicht loggen: es enthaelt in config.data
       // die gesendeten Zugangsdaten.
+      setErrorMessage(err.response?.data?.message ?? "Sign up failed. Please try again.");
     }
   };
   return (
@@ -72,6 +75,7 @@ function Signup() {
             }}
           />
         </label>
+        {errorMessage && <p className="space">{errorMessage}</p>}
         <button className="btn1" type="submit">Sign up</button>
       </form>
       <p className='space'>Allready have an account?</p>

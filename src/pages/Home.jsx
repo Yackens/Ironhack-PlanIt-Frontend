@@ -19,6 +19,7 @@ function Home() {
    const nav = useNavigate();
    const handleLogin = async (e) => {
      e.preventDefault();
+     setErrorMessage(null);
      try {
        const { data } = await axios.post(`${API_URL}/auth/login`, {
          username,
@@ -29,7 +30,7 @@ function Home() {
        await authenticateUser();
        nav("/categories");
      } catch (err) {
-       setErrorMessage(err.response?.data?.errorMessage ?? "Login failed.");
+       setErrorMessage(err.response?.data?.message ?? "Login failed.");
      }
    };
 
@@ -72,6 +73,7 @@ function Home() {
           />
         </label>
 
+    {errorMessage && <p className="space">{errorMessage}</p>}
     <button className="btn1" type="submit">LogIn</button>
     </form>
     <p className='space'>Don’t have an account?</p>
